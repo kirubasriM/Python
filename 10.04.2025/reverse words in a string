@@ -1,0 +1,19 @@
+class Solution:
+    def reverseWords(self, s):
+        # Split the string into words, automatically handling spaces
+        words = s.split()
+        
+        # Reverse the list of words
+        words.reverse()
+        
+        # Join the words with a single space
+        return ' '.join(words)
+
+# Example usage
+if __name__ == "__main__":
+    solution = Solution()
+    
+    # Test cases
+    print(solution.reverseWords("the sky is blue"))  # Output: "blue is sky the"
+    print(solution.reverseWords("  hello world  "))   # Output: "world hello"
+    print(solution.reverseWords("a good   example"))   # Output: "example good a"
