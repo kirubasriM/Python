@@ -1,0 +1,32 @@
+class Solution(object):
+    def fractionToDecimal(self, n, d):
+        """
+        :type numerator: int
+        :type denominator: int
+        :rtype: str
+        """
+        if n%d == 0:
+            return str(n/d)
+        is_neg = ''
+        if n * d < 0 :
+            is_neg = "-"
+            n  = abs(n) 
+            d = abs(d)
+            
+        res = ""
+        cache = collections.defaultdict(int)
+        rem = n % d 
+        res += str(n/d) + "."
+        
+        while  rem != 0 and rem not in cache :
+            cache[rem] = len(res)
+            rem *= 10
+            res += str(rem/d)
+            rem = rem % d
+         
+        if rem != 0:
+            res = res[:cache[rem]] + "(" + res[cache[rem]:] + ")"
+        return is_neg + res
+            
+            
+        
