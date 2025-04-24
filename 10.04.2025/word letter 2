@@ -1,0 +1,68 @@
+from collections import defaultdict, deque
+class Solution(object):
+	def findLadders(self, beginWord, endWord, wordList):
+		"""
+		:type beginWord: str
+		:type endWord: str
+		:type wordList: List[str]
+		:rtype: List[List[str]]
+		"""
+		
+		if endWord not in wordList:
+			return []
+		
+		# Since all words are of same length.
+		L = len(beginWord)
+		
+		# Dictionary to hold combination of words that can be formed,
+		# from any given word. By changing one letter at a time.
+		all_combo_dict = defaultdict(list)
+		for word in wordList:
+			for i in range(L):
+				# Key is the generic word
+				# Value is a list of words which have the same intermediate generic word.
+				all_combo_dict[word[:i] + "*" + word[i + 1:]].append(word)
+		
+		# Queue for BFS
+		queue = deque([(beginWord, 1)])
+		# Visited to make sure we don't repeat processing same word.
+		
+		visited = {beginWord: True}
+		node_dist_and_path = {beginWord: (0, [[beginWord]])}  # node->(dist, list of paths) # path including this word
+		
+		shortest_distance = None
+		while queue:
+			current_word, level = queue.popleft()
+			
+			if shortest_distance is not None and level > shortest_distance:
+				continue
+				
+			for i in range(L):
+				# Intermediate words for current word
+				intermediate_word = current_word[:i] + "*" + current_word[i + 1:]
+				
+				# Next states are all the words which share the same intermediate state.
+				for word in all_combo_dict[intermediate_word]:
+					# If at any point if we find what we are looking for					
+					if word == endWord:  # We don't break here! just set the shortest_distance
+						shortest_distance = level+1						
+					
+					if word in node_dist_and_path: # Even when it is already visited, we accumulate paths, as long as it is the shortest!
+						next_dist, next_path = node_dist_and_path[word]
+						if next_dist == level + 1:  # only update when the distance is equal
+							cur_word_dist, cur_word_path = node_dist_and_path[current_word]
+							node_dist_and_path[word] = (level + 1, next_path + [a + [word] for a in cur_word_path])
+							
+					else:  # So it is definitely not visted yet
+						cur_word_dist, cur_word_pathes = node_dist_and_path[current_word]
+						new_pathes_to_store = [a + [word] for a in cur_word_pathes]
+						node_dist_and_path[word] = (level + 1, new_pathes_to_store)
+						
+					if word not in visited:  # Otherwise, add it to the BFS Queue. Also mark it visited
+						visited[word] = True
+						queue.append((word, level + 1))
+						
+		if endWord not in node_dist_and_path:
+			return []
+		else:
+			return node_dist_and_path[endWord][1]
