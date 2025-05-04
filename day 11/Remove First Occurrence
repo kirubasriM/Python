@@ -1,0 +1,3 @@
+letters = ["a", "b", "c", "b", "d"]
+letters.remove("b")
+print(letters)  # Output: ["a", "c", "b", "d"]
