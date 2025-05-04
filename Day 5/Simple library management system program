@@ -1,0 +1,40 @@
+class Library:
+    def __init__(self):
+        self.books = {}
+
+    def add_book(self, title, author):
+        self.books[title] = author
+        print(f"Book '{title}' by {author} added to the library.")
+
+    def remove_book(self, title):
+        if title in self.books:
+            del self.books[title]
+            print(f"Book '{title}' removed from the library.")
+        else:
+            print(f"Book '{title}' not found in the library.")
+
+    def list_books(self):
+        print("Books in the library:")
+        for title, author in self.books.items():
+            print(f"{title} by {author}")
+
+library = Library()
+while True:
+    print("\n1. Add book")
+    print("2. Remove book")
+    print("3. List books")
+    print("4. Quit")
+    choice = input("Choose an option: ")
+    if choice == "1":
+        title = input("Enter book title: ")
+        author = input("Enter book author: ")
+        library.add_book(title, author)
+    elif choice == "2":
+        title = input("Enter book title: ")
+        library.remove_book(title)
+    elif choice == "3":
+        library.list_books()
+    elif choice == "4":
+        break
+    else:
+        print("Invalid option")
