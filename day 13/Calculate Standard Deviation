@@ -1,0 +1,8 @@
+import math
+numbers = [1, 2, 3, 4, 5]
+mean = sum(numbers) / len(numbers)
+variance = sum((x - mean)**2 for x in numbers) / len(numbers)
+std_dev = math.sqrt(variance)
+print(f"Standard deviation: {std_dev}")
+
+
