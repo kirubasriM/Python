@@ -1,0 +1,4 @@
+numbers = input("Enter numbers separated by space: ")
+numbers = list(map(int, numbers.split()))
+total = sum(numbers)
+print("Sum:", total)
