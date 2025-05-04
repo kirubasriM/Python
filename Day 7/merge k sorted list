@@ -1,0 +1,21 @@
+class Solution:
+    def mergeKLists(self, lists):
+        import heapq
+
+        head = ListNode(0)
+        current = head
+        heap = []
+
+        for i, linked_list in enumerate(lists):
+            if linked_list:
+                heapq.heappush(heap, (linked_list.val, i, linked_list))
+
+        while heap:
+            smallest_val, list_index, smallest_node = heapq.heappop(heap)
+            current.next = smallest_node
+            current = current.next
+
+            if smallest_node.next:
+                heapq.heappush(heap, (smallest_node.next.val, list_index, smallest_node.next))
+
+        return head.next
