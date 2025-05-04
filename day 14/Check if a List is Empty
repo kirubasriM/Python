@@ -1,0 +1,4 @@
+numbers = []
+if len(numbers) == 0:
+    print("The list is empty.")
+
