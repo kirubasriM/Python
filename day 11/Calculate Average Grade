@@ -1,0 +1,4 @@
+grades = [90, 85, 95, 88, 92]
+average_grade = sum(grades) / len(grades)
+print("Average grade:", average_grade)
+
