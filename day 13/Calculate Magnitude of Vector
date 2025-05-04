@@ -1,0 +1,5 @@
+import math
+vector = [1, 2, 3]
+magnitude = math.sqrt(sum(x**2 for x in vector))
+print(f"Magnitude of vector {vector}: {magnitude}")
+
