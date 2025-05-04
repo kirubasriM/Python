@@ -1,0 +1,7 @@
+fruits = ["apple", "banana", "cherry"]
+target = "banana"
+for i, fruit in enumerate(fruits):
+    if fruit == target:
+        print(f"Index of '{target}': {i}")
+
+
