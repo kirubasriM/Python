@@ -1,0 +1,8 @@
+todo_list = ["task1", "task2", "task3"]
+task_to_remove = input("Enter task to remove: ")
+if task_to_remove in todo_list:
+    todo_list.remove(task_to_remove)
+    print(todo_list)
+else:
+    print("Task not found.")
+
