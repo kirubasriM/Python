@@ -1,0 +1,6 @@
+numbers = [1, 2, 3, 4, 5]
+try:
+    index = numbers.index(6)
+except ValueError:
+    print("Element not found in list.")
+
