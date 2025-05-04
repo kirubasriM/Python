@@ -1,0 +1,4 @@
+name = "John Doe"
+length = len(name)
+print(f"Length of '{name}': {length}")
+
