@@ -1,0 +1,4 @@
+fruits = ["apple", "banana", "cherry"]
+length = len(fruits)
+print(f"Number of fruits: {length}")
+
