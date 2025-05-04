@@ -1,0 +1,4 @@
+word = "hello"
+for i, char in enumerate(word):
+    print(f"Character at index {i}: {char}")
+
