@@ -1,0 +1,8 @@
+import math
+number = float(input("Enter a number: "))
+if number >= 0:
+    sqrt = math.sqrt(number)
+    print(f"Square root of {number}: {sqrt}")
+else:
+    print("Cannot calculate square root of negative number.")
+
