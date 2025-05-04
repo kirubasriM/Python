@@ -1,0 +1,4 @@
+import math
+vector = [3, 4]
+norm = math.sqrt(sum(x**2 for x in vector))
+print(f"Euclidean norm of vector {vector}: {norm}")
