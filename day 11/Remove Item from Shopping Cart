@@ -1,0 +1,9 @@
+shopping_cart = ["item1", "item2", "item3"]
+item_to_remove = "item2"
+if item_to_remove in shopping_cart:
+    shopping_cart.remove(item_to_remove)
+    print("Item removed from cart.")
+    print(shopping_cart)
+else:
+    print("Item not found in cart.")
+
