@@ -1,0 +1,4 @@
+words = ["hello", "world", "a"]
+shortest_word = min(words, key=len)
+print(f"Shortest word: {shortest_word}")
+
