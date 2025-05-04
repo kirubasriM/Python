@@ -1,0 +1,6 @@
+text = input("Enter a text (max 10 characters): ")
+if len(text) > 10:
+    print("Text is too long.")
+else:
+    print("Text is valid.")
+
