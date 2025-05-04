@@ -1,0 +1,31 @@
+def dictionary_program():
+    dictionary = {}
+
+    while True:
+        print("\n1. Add word")
+        print("2. View dictionary")
+        print("3. Search word")
+        print("4. Quit")
+
+        choice = input("Choose an option: ")
+
+        if choice == "1":
+            word = input("Enter a word: ")
+            meaning = input("Enter the meaning: ")
+            dictionary[word] = meaning
+        elif choice == "2":
+            print("\nDictionary:")
+            for word, meaning in dictionary.items():
+                print(f"{word}: {meaning}")
+        elif choice == "3":
+            word = input("Enter a word to search: ")
+            if word in dictionary:
+                print(f"{word}: {dictionary[word]}")
+            else:
+                print("Word not found")
+        elif choice == "4":
+            break
+        else:
+            print("Invalid option")
+
+dictionary_program()
