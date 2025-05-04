@@ -1,0 +1,7 @@
+text = "The quick brown fox jumps over the lazy dog."
+try:
+    index = text.index("fox")
+    print("Substring 'fox' found at index:", index)
+except ValueError:
+    print("Substring not found.")
+
