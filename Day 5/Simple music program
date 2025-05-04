@@ -1,0 +1,21 @@
+import pygame
+
+def play_music(file_path):
+    pygame.init()
+    pygame.mixer.init()
+    pygame.mixer.music.load(file_path)
+    pygame.mixer.music.play()
+    while True:
+        print("Press 'p' to pause, 'r' to resume")
+        print("Press 'e' to exit the program")
+        command = input(" ")
+        if command == 'p':
+            pygame.mixer.music.pause()
+        elif command == 'r':
+            pygame.mixer.music.unpause()
+        elif command == 'e':
+            pygame.mixer.music.stop()
+            break
+
+file_path = input("Enter the music file path: ")
+play_music(file_path)
