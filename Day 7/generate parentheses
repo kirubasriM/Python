@@ -1,0 +1,24 @@
+class Solution(object):
+    def generateParenthesis(self, n):
+        """
+        :type n: int
+        :rtype: List[str]
+        """
+        # Create a default answer array
+        ans = []
+
+        # Create a function to add parenthesis
+        def addParenthesis(current, n_open, n_close):
+            if n_open == 0:
+                ans.append(current + (')' * n_close))
+            else:
+                addParenthesis(current + '(', n_open-1, n_close)
+                if n_open < n_close:
+                    addParenthesis(current + ')', n_open, n_close-1)
+
+        # Start call a function
+        # All combinations start with '('
+        addParenthesis('(', n-1, n)
+
+        # Return answer
+        return ans
