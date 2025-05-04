@@ -1,0 +1,4 @@
+person = {}
+if len(person) == 0:
+    print("The dictionary is empty.")
+
