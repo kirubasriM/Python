@@ -1,0 +1,13 @@
+def find_max(a, b, c, d):
+    max_value = a
+    if b &gt; max_value:
+        max_value = b
+    if c &gt; max_value:
+        max_value = c
+    if d &gt; max_value:
+        max_value = d
+    return max_value
+
+# Example usage:
+result = find_max(5, 9, 3, 7)
+print(&quot;Maximum:&quot;, result)
