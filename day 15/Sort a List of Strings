@@ -1,0 +1,3 @@
+words = ["hello", "world", "abc", "xyz"]
+words.sort()
+print(words)
