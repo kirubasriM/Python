@@ -1,0 +1,14 @@
+def bytes_to_string(bytes_data):
+    try:
+        string_data = bytes_data.decode('utf-8')
+        return string_data
+    except UnicodeDecodeError:
+        print("Error: Unable to decode bytes to string.")
+        return None
+
+# Example usage
+bytes_data = b"Hello, World!"
+print("Bytes:", bytes_data)
+
+string_data = bytes_to_string(bytes_data)
+print("String:", string_data)
