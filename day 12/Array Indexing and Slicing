@@ -1,0 +1,7 @@
+arr = np.array([1, 2, 3, 4, 5])
+print("Original array:", arr)
+print("First element:", arr[0])
+print("Last element:", arr[-1])
+print("Slice of array (first 3 elements):", arr[:3])
+
+
