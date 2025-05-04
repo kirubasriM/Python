@@ -1,0 +1,3 @@
+sentence = "Hello, World!"
+index = sentence.index("World")
+print("Index of 'World':", index)
