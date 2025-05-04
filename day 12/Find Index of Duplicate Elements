@@ -1,0 +1,4 @@
+numbers = [1, 2, 3, 2, 4]
+index = numbers.index(2)
+print("Index of first occurrence of 2:", index)
+
