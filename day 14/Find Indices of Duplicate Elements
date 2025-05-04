@@ -1,0 +1,10 @@
+numbers = [1, 2, 2, 3, 4, 4, 5]
+duplicates = {}
+for i, num in enumerate(numbers):
+    if num in duplicates:
+        duplicates[num].append(i)
+    else:
+        duplicates[num] = [i]
+for num, indices in duplicates.items():
+    if len(indices) > 1:
+        print(f"Indices of {num}: {indices}")
