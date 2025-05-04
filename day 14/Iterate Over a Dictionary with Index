@@ -1,0 +1,4 @@
+person = {"name": "John", "age": 30}
+for i, (key, value) in enumerate(person.items()):
+    print(f"Item {i+1}: {key} = {value}")
+
